@@ -1,14 +1,15 @@
 //Canvas config
 var canvas = document.getElementById("board1");
+var canvas1 = document.getElementById("board2"); 
 var ctx = canvas.getContext("2d");
 
 //Variable globales
-var cars = []
 var interval;
 var frames = 0;
 var images = {
   bg : "./images/road.png",
   player : "./images/FEDERICO.png",
+  player2 : "./images/ROLANDO.png",
   carRed : "./images/enemy01.png",
   carYellow : "./images/enemy01-b.png"
 }
@@ -55,21 +56,28 @@ class Fede{
 
 class Car{
   constructor(){
-    this.x
-    this.y
-    this.width
-    this.height
-    
+    this.x = canvas.width
+    this.y = 255
+    this.width = 60
+    this.height = 50
+    this.image = new Image()
+    this.image.src = images.carRed
+    this.image.onload = () => {
+      this.draw()
+    }  
+  }
+  draw(){
+    this.x -=15
+    ctx.drawImage(this.image,this.x,this.y,this.width,this.height)
   }
 }
 
 
 //Instancias
 var board1 = new Board1()
-board1.draw()
-
 var player = new Fede()
-player.draw()
+var car = new Car()
+
 
 //Funciones principales
 function update(){
@@ -77,6 +85,7 @@ function update(){
   ctx.clearRect(0,0,canvas.width,canvas.height)
   board1.draw()
   player.draw()
+  car.draw()
 }
 
 function start(){
@@ -85,6 +94,7 @@ function start(){
 }
 
 //Funciones auxiliares
+
 
 //Observadores
 addEventListener("keydown", function(e){

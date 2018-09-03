@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Minecraft';
+  src: url('./images/Minecraft.ttf')
+}
+
+body{
+  font-family: 'Minecraft'
+}
+h4{
+  margin : 0;
+}
+
 .instructions{
   height : 100vh;
   background-color : #000;
@@ -12,4 +24,16 @@
 .game{
   background-color: #000;
   height : 100vh;
+}
+.score{
+  width: 80%;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  color:#fff;
+  padding: 20px;
+}
+.players{
+  margin:0 auto;
+  padding: 20px 0;
 }
