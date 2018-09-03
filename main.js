@@ -33,7 +33,7 @@ class Board1{
       ctx.drawImage(this.image,this.x,this.y,this.width,this.height)
       ctx.drawImage(this.image,this.x + this.width,this.y,this.width,this.height)
     }
-} // Class Board
+} // Class Board 
 
 class Fede{
   constructor(){

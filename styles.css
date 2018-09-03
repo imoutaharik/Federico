@@ -15,7 +15,7 @@ h4{
   background-color : #000;
   color: #fff;
   text-align :center;
-  padding-top : 50px;
+  padding : 50px 30px;
 }
 
 .logo{
@@ -24,6 +24,7 @@ h4{
 .game{
   background-color: #000;
   height : 100vh;
+  padding-top:50px;
 }
 .score{
   width: 80%;
@@ -36,4 +37,17 @@ h4{
 .players{
   margin:0 auto;
   padding: 20px 0;
+}
+.red-instruct{
+  color:red;
+}
+hr{
+  border: 1px dashed #fff;
+  width:80%;
+}
+
+.level{
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
 }
