@@ -1,10 +1,7 @@
 //Canvas config
 var canvas = document.getElementById("board1");
-var canvas2 = document.getElementById("board2"); 
 var score1Txt = document.getElementById("scoreP1")
 var score1 = parseInt(document.getElementById("scoreP1").innerHTML)
-var score2Txt = document.getElementById("scoreP2")
-var score2 = parseInt(document.getElementById("scoreP2").innerHTML)
 var ctx = canvas.getContext("2d");
 
 
@@ -52,6 +49,7 @@ class Board1{
       ctx.fillStyle = "white"
     }
 } // Class Board 
+
 
 class Fede{
   constructor(){
@@ -209,5 +207,3 @@ addEventListener("keydown", function(e){
     board1.music.play()
   }
 })
-
-//Player2
