@@ -11,6 +11,7 @@ var cars2 = []
 var images2 = {
   bg : "./images/road.png",
   player2 : "./images/ROLANDO.png",
+  player2Hurt : "./images/ROLANDO-hurt.png",
   carRed2 : "./images/enemy01.png",
   carYellow2 : "./images/enemy01-b.png"
 }
@@ -156,6 +157,7 @@ function checkCollisions2(){
         score2 = 0
         score2Txt.innerHTML= score2
         car2.crash.play()
+        player2.image.src = images2.player2Hurt
       }
     }else{
       player2.image.src = images2.player2
@@ -165,7 +167,7 @@ function checkCollisions2(){
 
 //Funciones auxiliares
 function randomCarY2(){
-  if(frames2 % 105 === 0){
+  if(frames2 % 100 === 0){
   var y = 255
   var cocheAmarillo = new Car2("carYellow2")
   cars2.push(cocheAmarillo)
@@ -173,7 +175,7 @@ function randomCarY2(){
 }
 
 function randomCarR2(){
-  if(frames % 90 === 0){
+  if(frames % 95 === 0){
   var y = 255
   var coche = new Car2("carRed2")
   cars2.push(coche)
