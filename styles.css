@@ -52,3 +52,11 @@ hr{
   width: 80%;
   margin: 0 auto;
 }
+.startBtn{
+  color:#000;
+  background-color: #ffe000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
