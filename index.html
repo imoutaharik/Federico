@@ -15,21 +15,21 @@
     <!--Left Column Instructions-->
     <div class="instructions col-5">
       <img class="logo" src="./images/logo.svg" alt="">
-      <div style="width:60%; margin:0 auto; padding:40px 0;" class="row">
+      <div style="width:60%; margin:0 auto; padding:30px 0;" class="row">
         <div class="col-6">
           <img style="height:80px;" src="./images/FEDERICO.png" alt="">
           <h4>Federico</h4>
+          <img style="margin-top:10px;" src="./images//spacebar.svg" alt="">
         </div>
         <div class="col-6">
           <img style="height:80px;" src="./images/ROLANDO.png" alt="">
           <h4>Rolando</h4>
+          <img style="height:25px;margin-top:10px;" src="./images//shift.svg" alt="">
         </div>
       </div>
       <hr>
       <div style="padding:20px">
-        <h5 style="color:#ffe000">Presiona "Esc" para empezar</h5>
-        <h5 class="red-instruct">P1 : Presiona "Espacio" para saltar</h5>
-        <h5 class="red-instruct">P2 : Presiona "Maj" para saltar</h5>
+        <button id="start" class="btn btn-warning btn-lg">Press Esc to Start Game</button>
       </div>
       <hr>
       <div class="level">
@@ -53,9 +53,9 @@
       </div>
       
       <div class="score">
-        <h4>Player 1 : <span id="scoreP1">0</span></h4>
+        <h4><span id="p1Name">Player 1</span> : <span id="scoreP1">0</span></h4>
         <img style="height:30px;" src="./images/versus.svg" alt="">
-        <h4>Player 2 : <span id="scoreP2">0</span></h4>
+        <h4><span id="p2Name">Player 2</span> : <span id="scoreP2">0</span></h4>
       </div>
       <div>
        <canvas width="900" height="320" id="board2"></canvas> 

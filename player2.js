@@ -116,8 +116,8 @@ function update2(){
   }
 }
 
-function start2(){
-  frames2 = 10800
+function P2level1(){
+  frames2 = 7200
   interval2 = setInterval(update2, 1000/60)
   score2=0
 }

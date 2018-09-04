@@ -122,8 +122,8 @@ function update(){
   }
 }
 
-function start1(){
-  frames = 10800
+function P1level1(){
+  frames = 7200
   interval = setInterval(update, 1000/60)
   score1=0
 }
@@ -202,8 +202,8 @@ addEventListener("keydown", function(e){
     player1.y -= 220
   }
   if(e.keyCode === 27){
-    start1()
+    P1level1()
     board1.music.play()
-    start2()
+    P2level1()
   }
 })
