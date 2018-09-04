@@ -6,6 +6,7 @@ var ctx = canvas.getContext("2d");
 
 
 
+
 //Variable globales
 var interval;
 var frames = 0;
@@ -14,10 +15,8 @@ var images = {
   bg : "./images/road.png",
   player1 : "./images/FEDERICO.png",
   player1Hurt : "./images/FEDERICO-hurt.png",
-  player2 : "./images/ROLANDO.png",
   carRed : "./images/enemy01.png",
-  carYellow : "./images/enemy01-b.png",
-  guajolota : "./images/GUAJOLOTA.png"
+  carYellow : "./images/enemy01-b.png"
 }
 
 //Clases
@@ -205,5 +204,6 @@ addEventListener("keydown", function(e){
   if(e.keyCode === 27){
     start1()
     board1.music.play()
+    start2()
   }
 })
