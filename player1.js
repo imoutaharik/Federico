@@ -12,7 +12,7 @@ var interval;
 var frames = 0;
 var cars = []
 var images = {
-  bg : "./images/road.png",
+  bg : "./images/bg02.png",
   player1 : "./images/FEDERICO.png",
   player1Hurt : "./images/FEDERICO-hurt.png",
   carRed : "./images/enemy01.png",
