@@ -18,7 +18,8 @@ var images = {
   player1Hurt : "./images/FEDERICO-hurt.png",
   carRed : "./images/enemy01.png",
   carYellow : "./images/enemy01-b.png",
-  atole : "./images/atole.png"
+  atole : "./images/atole.png",
+  emptyAtole : "./images/emptyAtole.png"
 }
 
 //Clases
@@ -54,7 +55,7 @@ class Board1{
 
 class Fede{
   constructor(){
-    this.x = 100
+    this.x = 150
     this.y = 255
     this.width = 40
     this.height = 50
@@ -201,6 +202,7 @@ function checkCollisions1(){
         score1 += 14
         score1Txt.innerHTML= score1
       }
+      atole.image.src = images.emptyAtole
     }
   })
 }
