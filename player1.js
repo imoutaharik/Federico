@@ -15,6 +15,7 @@ var atoles = [];
 var images = {
   bg : "./images/bg02.png",
   player1 : "./images/FEDERICO.png",
+  player1B : "./images/FEDERICO2.png",
   player1Hurt : "./images/FEDERICO-hurt.png",
   carRed : "./images/enemy01.png",
   carYellow : "./images/enemy01-b.png",
@@ -59,16 +60,23 @@ class Fede{
     this.y = 255
     this.width = 40
     this.height = 50
-    this.image = new Image()
-    this.image.src = images.player1
-    this.image.onload = () => {
-      this.draw()
+    this.image2 = new Image()
+    this.image2.src = images.player1B
+    this.image1 = new Image()
+    this.image1.src = images.player1
+    this.theImage = this.image1
+    this.gravity = 11
+  }
+  animate(){
+    if(frames % 10 === 0){
+        if(this.theImage === this.image1) this.theImage = this.image2
+        else if(this.theImage === this.image2) this.theImage = this.image1
     }
-    this.gravity = 8
   }
   draw(){
+    this.animate()
+    ctx.drawImage(this.theImage,this.x,this.y,this.width,this.height) 
     if (this.y < canvas.height-70) this.y += this.gravity
-    ctx.drawImage(this.image,this.x,this.y,this.width,this.height) 
   }  
   crashWidth(item){
     var crash =  (this.x < item.x + item.width) &&
@@ -185,15 +193,15 @@ function checkCollisions1(){
         score1Txt.innerHTML= score1
         console.log(score1)
         car.crash.play()
-        player1.image.src = images.player1Hurt
+        player1.image1.src = images.player1Hurt
       }else{
         score1 = 0
         score1Txt.innerHTML= score1
         car.crash.play()
-        player1.image.src = images.player1Hurt
+        player1.image1.src = images.player1Hurt
       }
     }else{
-      player1.image.src = images.player1
+      player1.image1.src = images.player1
     }
   })
   atoles.forEach(function(atole){
