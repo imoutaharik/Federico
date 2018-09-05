@@ -10,7 +10,8 @@ var ctx = canvas.getContext("2d");
 //Variable globales
 var interval;
 var frames = 0;
-var cars = []
+var cars = [];
+var atoles = [];
 var images = {
   bg : "./images/bg02.png",
   player1 : "./images/FEDERICO.png",
@@ -99,11 +100,30 @@ class Car{
   }
 }
 
+class Atole{
+  constructor(){
+    this.x = canvas.width
+    this.y = 120
+    this.width = 30
+    this.height = 30
+    this.image = new Image()
+    this.image.src = images.atole
+    this.image.onload = () => {
+      this.draw()
+    }  
+  }
+  draw(){
+    this.x -=15
+    ctx.drawImage(this.image,this.x,this.y,this.width,this.height)
+  }
+}
+
 
 //Instancias
 var board1 = new Board1()
 var player1 = new Fede()
 var car = new Car()
+var atole = new Atole()
 
 
 //Funciones principales
@@ -119,6 +139,8 @@ function update(){
     updateScore1()
     checkCollisions1()
     compareScore()
+    randomAtole()
+    powerUp()
   }else{
     finishLine1()
   }
@@ -173,6 +195,14 @@ function checkCollisions1(){
       player1.image.src = images.player1
     }
   })
+  atoles.forEach(function(atole){
+    if (player1.crashWidth(atole)){
+      if(score1 >=0){
+        score1 += 14
+        score1Txt.innerHTML= score1
+      }
+    }
+  })
 }
 
 //Funciones auxiliares
@@ -195,6 +225,20 @@ function randomCarR(){
 function drawCars1(){
   cars.forEach(function(cars){
     cars.draw()
+  })
+}
+
+function randomAtole(){
+  if(frames % 250 === 0){
+    var y = 120
+    var atole = new Atole()
+    atoles.push(atole)
+    }
+}
+
+function powerUp(){
+  atoles.forEach(function(atole){
+    atole.draw()
   })
 }
 
