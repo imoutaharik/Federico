@@ -7,13 +7,16 @@ var ctx2 = canvas2.getContext("2d");
 
 var interval2;
 var frames2 = 0;
-var cars2 = []
+var cars2 = [];
+var atoles2 = [];
 var images2 = {
   bg : "./images/bg02.png",
   player2 : "./images/ROLANDO.png",
   player2Hurt : "./images/ROLANDO-hurt.png",
   carRed2 : "./images/enemy01.png",
-  carYellow2 : "./images/enemy01-b.png"
+  carYellow2 : "./images/enemy01-b.png",
+  atole2 : "./images/atole.png",
+  emptyAtole2 : "./images/emptyAtole.png"
 }
 
 //Clases
@@ -47,7 +50,7 @@ class Board2{
 
 class Rolando{
   constructor(){
-    this.x = 100
+    this.x = 150
     this.y = 255
     this.width = 40
     this.height = 50
@@ -93,11 +96,30 @@ class Car2{
   }
 }
 
+class Atole2{
+  constructor(){
+    this.x = canvas2.width
+    this.y = 120
+    this.width = 30
+    this.height = 30
+    this.image = new Image()
+    this.image.src = images2.atole2
+    this.image.onload = () => {
+      this.draw()
+    }  
+  }
+  draw(){
+    this.x -=15
+    ctx2.drawImage(this.image,this.x,this.y,this.width,this.height)
+  }
+}
+
 
 //Instancias
 var board2 = new Board2()
 var player2 = new Rolando()
 var car2 = new Car2()
+var atole2 = new Atole2()
 
 
 //Funciones principales
@@ -113,6 +135,8 @@ function update2(){
     updateScore2()
     checkCollisions2()
     compareScore()
+    randomAtole2()
+    powerUp2()
   }else{
     finishLine2()
   }
@@ -165,6 +189,15 @@ function checkCollisions2(){
       player2.image.src = images2.player2
     }
   })
+  atoles2.forEach(function(atole2){
+    if (player2.crashWidth(atole2)){
+      if(score2 >=0){
+        score2 += 14
+        score2Txt.innerHTML= score2
+      }
+      atole2.image.src = images2.emptyAtole2
+    }
+  })
 }
 
 //Funciones auxiliares
@@ -177,7 +210,7 @@ function randomCarY2(){
 }
 
 function randomCarR2(){
-  if(frames % 95 === 0){
+  if(frames2 % 95 === 0){
   var y = 255
   var coche = new Car2("carRed2")
   cars2.push(coche)
@@ -187,6 +220,20 @@ function randomCarR2(){
 function drawCars2(){
   cars2.forEach(function(cars2){
     cars2.draw()
+  })
+}
+
+function randomAtole2(){
+  if(frames2 % 250 === 0){
+    var y = 120
+    var atole2 = new Atole2()
+    atoles2.push(atole2)
+    }
+}
+
+function powerUp2(){
+  atoles2.forEach(function(atoles2){
+    atoles2.draw()
   })
 }
 
