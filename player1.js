@@ -164,11 +164,11 @@ function updateScore1(){
 function finishLine1(){
   if(frames === 0){
     clearInterval(interval)
-    ctx.fillStyle = "white"
+    ctx.fillStyle = "#ffe000"
     ctx.font = "60px Minecraft"
     ctx.fillText("Guajolota!!!", 300, 150)
     ctx.font = "20px Minecraft"
-    ctx.fillStyle = "red"
+    ctx.fillStyle = "white"
     ctx.fillText("Presiona 'Tab' para continuar...",300,200)
     interval = null
     board1.music.pause()
