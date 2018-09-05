@@ -63,3 +63,7 @@ hr{
 .hidden{
   display:none;
 }
+.beginBtn{
+  display:flex;
+  justify-content: center;
+}
