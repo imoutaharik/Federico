@@ -13,6 +13,7 @@ var images2 = {
   bg : "./images/bg02.png",
   player2 : "./images/ROLANDO.png",
   player2Hurt : "./images/ROLANDO-hurt.png",
+  player2B : "./images/ROLANDO2.png",
   carRed2 : "./images/enemy01.png",
   carYellow2 : "./images/enemy01-b.png",
   atole2 : "./images/atole.png",
@@ -54,16 +55,23 @@ class Rolando{
     this.y = 255
     this.width = 40
     this.height = 50
-    this.image = new Image()
-    this.image.src = images2.player2
-    this.image.onload = () => {
-      this.draw()
+    this.image2 = new Image()
+    this.image2.src = images2.player2B
+    this.image1 = new Image()
+    this.image1.src = images2.player2
+    this.theImage = this.image1
+    this.gravity = 11
+  }
+  animate(){
+    if(frames2 % 10 === 0){
+        if(this.theImage === this.image1) this.theImage = this.image2
+        else if(this.theImage === this.image2) this.theImage = this.image1
     }
-    this.gravity = 8
   }
   draw(){
-    if (this.y < canvas2.height-70) this.y += this.gravity
-    ctx2.drawImage(this.image,this.x,this.y,this.width,this.height) 
+    this.animate()
+    ctx2.drawImage(this.theImage,this.x,this.y,this.width,this.height) 
+    if (this.y < canvas.height-70) this.y += this.gravity
   }  
   crashWidth(item){
     var crash =  (this.x < item.x + item.width) &&
@@ -183,10 +191,10 @@ function checkCollisions2(){
         score2 = 0
         score2Txt.innerHTML= score2
         car2.crash.play()
-        player2.image.src = images2.player2Hurt
+        player2.image1.src = images2.player2Hurt
       }
     }else{
-      player2.image.src = images2.player2
+      player2.image1.src = images2.player2
     }
   })
   atoles2.forEach(function(atole2){
