@@ -2,7 +2,7 @@
 var canvas2 = document.getElementById("board2");
 var score2Txt = document.getElementById("scoreP2")
 var score2 = parseInt(document.getElementById("scoreP2").innerHTML)
-var ctx2 = canvas2.getContext("2d");
+var ctx2;
 
 
 var interval2;

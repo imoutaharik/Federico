@@ -1,11 +1,34 @@
 //Canvas config
-var canvas = document.getElementById("board1");
+var canvas= document.getElementById("board1");
 var score1Txt = document.getElementById("scoreP1")
 var score1 = parseInt(document.getElementById("scoreP1").innerHTML)
-var ctx = canvas.getContext("2d");
+var ctx;
+var playSolo = document.getElementById("playsolo");
+var multiplayer = document.getElementById("multiplayer");
+var soloScore = document.getElementById("soloScore")
+var multiScore = document.getElementById("multiScore")
+var soloscoretxt = document.getElementById("scoretxtsolo")
+var versustxt = document.getElementById("scoretxtvs")
+var multiscoretxt = document.getElementById("scoretxtmulti")
 
-
-
+function begin1Player(){
+  ctx = canvas.getContext("2d");
+  board1.music.play()
+  P1level1()
+  playSolo.setAttribute("disabled", true)
+  soloscoretxt.removeAttribute("class")
+}
+function multiPlayer(){
+  ctx = canvas.getContext("2d");
+  ctx2 = canvas2.getContext("2d");
+  board1.music.play()
+  P1level1()
+  P2level1()
+  multiplayer.setAttribute("disabled", true)
+  soloscoretxt.removeAttribute("class")
+  multiscoretxt.removeAttribute("class")
+  versustxt.removeAttribute("class")
+}
 
 //Variable globales
 var interval;
@@ -272,15 +295,12 @@ function winner(){
   }
 }
 
+
+
 //Observadores
 addEventListener("keydown", function(e){
   if(e.keyCode === 32 && player1.y >canvas.height-70){
     this.gravity = 0
     player1.y -= 220
-  }
-  if(e.keyCode === 27){
-    P1level1()
-    board1.music.play()
-    P2level1()
   }
 })

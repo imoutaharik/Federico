@@ -29,8 +29,8 @@
       </div>
       <hr>
       <div class="beginBtn" style="padding:10px">
-        <button style="padding:10px;margin:10px;font-size:1.5em;" class="btn btn-warning">1 Player</button>
-        <button style="padding:10px;margin:10px;font-size:1.5em;" class="btn btn-danger">2 Players</button>
+        <button id="playsolo" onclick="begin1Player()" style="padding:10px;margin:10px;font-size:1.5em;" class="btn btn-warning">1 Player</button>
+        <button id="multiplayer" onclick="multiPlayer()" style="padding:10px;margin:10px;font-size:1.5em;" class="btn btn-danger">2 Players</button>
       </div>
       <hr>
       <div class="level">
@@ -54,9 +54,9 @@
       </div>
       
       <div class="score">
-        <h4><img id="winner1" class="hidden" style="height:30px;margin:5px;" src="./images/Trophy-w.png" alt="Trophy"><span id="p1Name">Federico</span> : <span id="scoreP1">0</span></h4>
-        <img style="height:30px;" src="./images/versus.svg" alt="">
-        <h4><img id="winner2" class="hidden" style="height:30px;margin:5px;" src="./images/Trophy-w.png" alt="Trophy"><span id="p2Name">Rolando</span> : <span id="scoreP2">0</span></h4>
+        <h4 id="scoretxtsolo" class="hidden"><img id="winner1" class="hidden" style="height:30px;margin:5px;" src="./images/Trophy-w.png" alt="Trophy"><span id="p1Name">Federico</span> : <span id="scoreP1">0</span></h4>
+        <img id="scoretxtvs" class="hidden" style="height:30px;" src="./images/versus.svg" alt="">
+        <h4 id="scoretxtmulti" class="hidden"><img id="winner2" class="hidden" style="height:30px;margin:5px;" src="./images/Trophy-w.png" alt="Trophy"><span id="p2Name">Rolando</span> : <span id="scoreP2">0</span></h4>
       </div>
       <div>
        <canvas width="900" height="320" id="board2"></canvas> 
