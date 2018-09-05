@@ -112,13 +112,14 @@ function update2(){
     drawCars2()
     updateScore2()
     checkCollisions2()
+    compareScore()
   }else{
     finishLine2()
   }
 }
 
 function P2level1(){
-  frames2 = 7200
+  frames2 = 3600
   interval2 = setInterval(update2, 1000/60)
   score2=0
 }
@@ -142,6 +143,7 @@ function finishLine2(){
     ctx2.fillText("Presiona 'Tab' para continuar...",300,200)
     interval2 = null
     board2.winSound.play()
+    winner()
   }
 }
 

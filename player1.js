@@ -16,7 +16,8 @@ var images = {
   player1 : "./images/FEDERICO.png",
   player1Hurt : "./images/FEDERICO-hurt.png",
   carRed : "./images/enemy01.png",
-  carYellow : "./images/enemy01-b.png"
+  carYellow : "./images/enemy01-b.png",
+  atole : "./images/atole.png"
 }
 
 //Clases
@@ -117,13 +118,14 @@ function update(){
     drawCars1()
     updateScore1()
     checkCollisions1()
+    compareScore()
   }else{
     finishLine1()
   }
 }
 
 function P1level1(){
-  frames = 7200
+  frames = 3600
   interval = setInterval(update, 1000/60)
   score1=0
 }
@@ -148,6 +150,7 @@ function finishLine1(){
     interval = null
     board1.music.pause()
     board1.winSound.play()
+    winner()
   }
 }
 
@@ -193,6 +196,26 @@ function drawCars1(){
   cars.forEach(function(cars){
     cars.draw()
   })
+}
+
+function compareScore(){
+  if(score1 > score2){
+    score1Txt.style.color = "#ffe000";
+    score2Txt.style.color = "#fff";
+  }
+  else if(score2 > score1){
+    score2Txt.style.color = "#ffe000";
+    score1Txt.style.color = "#fff";
+  }
+}
+
+function winner(){
+  if(score1 > score2){
+    document.getElementById("winner1").removeAttribute("class");
+  }
+  else if(score2 > score1){
+    document.getElementById("winner2").removeAttribute("class");
+  }
 }
 
 //Observadores

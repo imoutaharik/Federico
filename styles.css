@@ -60,3 +60,6 @@ hr{
   width: 60%;
   margin: 0 auto;
 }
+.hidden{
+  display:none;
+}
