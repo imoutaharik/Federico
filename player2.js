@@ -172,7 +172,7 @@ function finishLine2(){
     ctx2.fillText("Guajolota!!!", 300, 150)
     ctx2.font = "20px Minecraft"
     ctx2.fillStyle = "white"
-    ctx2.fillText("Presiona 'Tab' para continuar...",300,200)
+    ctx2.fillText("Es todo por el momento, Gracias!",300,200)
     interval2 = null
     board2.winSound.play()
     winner()

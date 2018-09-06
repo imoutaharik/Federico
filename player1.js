@@ -233,6 +233,10 @@ function finishLine1(){
     board1.music.pause()
     board1.winSound.play()
     winner()
+    document.getElementById("levelnum").innerHTML = "2"
+    document.getElementById("leveldescript").innerHTML = "Federico y Rolando ya llegaron a la escuela pero hoy es Lunes y les toca Honores. No son estudiantes ejemplares y no quieren ser vistos por sus profesores y asi faltar a su deber."
+    document.getElementById("objetivo1").innerHTML = "1- Evita tus profesores"
+    document.getElementById("objetivo2").innerHTML = "2- Que no te manden a Honores"
   }
 }
 

@@ -11,6 +11,9 @@ class Boardlvl2{
     this.image.onload = () => {
       this.draw()
     }
+    this.music = new Audio()
+    this.music.src = "./images/level2/Honores.mp3"
+
     this.winSound = new Audio()
     this.winSound.src = "./images/win-sound.mp3"
   }
@@ -72,6 +75,7 @@ function updatelvl2(){
 }
 
 function P1level2(){
+  boardlvl2.music.play()
   frames = 5400
   interval = setInterval(updatelvl2, 1000/60)
   score1=0
@@ -88,6 +92,7 @@ function finishLinelvl2(){
     ctx.fillText("Es todo por el momento",300,200)
     interval = null
     board1.winSound.play()
+    board1.music.pause()
     winner()
   }
 }
