@@ -38,6 +38,7 @@ var interval;
 var frames = 0;
 var cars = [];
 var atoles = [];
+var profes = [];
 var images = {
   bg : "./images/bg02.png",
   bglvl2 : "./images/level2/bglvl2.png",
@@ -46,6 +47,8 @@ var images = {
   player1Hurt : "./images/FEDERICO-hurt.png",
   carRed : "./images/enemy01.png",
   carYellow : "./images/enemy01-b.png",
+  male : "./images/level2/MALE-PROFE.png",
+  female : "./images/level2/FEMALE-PROFE.png",
   atole : "./images/atole.png",
   emptyAtole : "./images/emptyAtole.png",
   tamalero : "./images/tamalero.png"
