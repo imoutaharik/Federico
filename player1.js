@@ -166,7 +166,7 @@ class Tamalero{
     }  
   }
   draw(){
-    this.x -=180
+    this.x -=200
     ctx.drawImage(this.image,this.x,this.y,this.width,this.height)
   }
 }
@@ -319,7 +319,7 @@ function winner(){
 }
 
 function drawTamalero(){
-  if(frames % 3000 === 0){
+  if(frames === 0){
   tamalero.draw()
   }
 }
