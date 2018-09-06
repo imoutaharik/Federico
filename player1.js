@@ -17,6 +17,7 @@ function begin1Player(){
   P1level1()
   playSolo.setAttribute("disabled", true)
   soloscoretxt.removeAttribute("class")
+  multiplayer.setAttribute("disabled", true)
 }
 function multiPlayer(){
   ctx = canvas.getContext("2d");
@@ -28,6 +29,7 @@ function multiPlayer(){
   soloscoretxt.removeAttribute("class")
   multiscoretxt.removeAttribute("class")
   versustxt.removeAttribute("class")
+  playSolo.setAttribute("disabled", true)
 }
 
 //Variable globales
