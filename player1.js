@@ -45,7 +45,8 @@ var images = {
   carRed : "./images/enemy01.png",
   carYellow : "./images/enemy01-b.png",
   atole : "./images/atole.png",
-  emptyAtole : "./images/emptyAtole.png"
+  emptyAtole : "./images/emptyAtole.png",
+  tamalero : "./images/tamalero.png"
 }
 
 //Clases
@@ -152,12 +153,31 @@ class Atole{
   }
 }
 
+class Tamalero{
+  constructor(){
+    this.x = canvas.width
+    this.y = 235
+    this.width = 100
+    this.height = 80
+    this.image = new Image()
+    this.image.src = images.tamalero
+    this.image.onload = () => {
+      this.draw()
+    }  
+  }
+  draw(){
+    this.x -=180
+    ctx.drawImage(this.image,this.x,this.y,this.width,this.height)
+  }
+}
+
 
 //Instancias
 var board1 = new Board1()
 var player1 = new Fede()
 var car = new Car()
 var atole = new Atole()
+var tamalero = new Tamalero()
 
 
 //Funciones principales
@@ -175,6 +195,7 @@ function update(){
     compareScore()
     randomAtole()
     powerUp()
+    drawTamalero()
   }else{
     finishLine1()
   }
@@ -294,6 +315,12 @@ function winner(){
   }
   else if(score2 > score1){
     document.getElementById("winner2").removeAttribute("class");
+  }
+}
+
+function drawTamalero(){
+  if(frames % 3000 === 0){
+  tamalero.draw()
   }
 }
 
