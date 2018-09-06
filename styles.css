@@ -67,3 +67,6 @@ hr{
   display:flex;
   justify-content: center;
 }
+.modal-content{
+  background-color: #3c3c3c;
+}
