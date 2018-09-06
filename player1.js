@@ -15,6 +15,7 @@ function begin1Player(){
   ctx = canvas.getContext("2d");
   board1.music.play()
   P1level1()
+  instructbtn.setAttribute("disabled", true)
   playSolo.setAttribute("disabled", true)
   soloscoretxt.removeAttribute("class")
   multiplayer.setAttribute("disabled", true)
@@ -39,6 +40,7 @@ var cars = [];
 var atoles = [];
 var images = {
   bg : "./images/bg02.png",
+  bglvl2 : "./images/level2/bglvl2.png",
   player1 : "./images/FEDERICO.png",
   player1B : "./images/FEDERICO2.png",
   player1Hurt : "./images/FEDERICO-hurt.png",
@@ -223,7 +225,7 @@ function finishLine1(){
     ctx.fillText("Guajolota!!!", 300, 150)
     ctx.font = "20px Minecraft"
     ctx.fillStyle = "white"
-    ctx.fillText("Presiona 'Tab' para continuar...",300,200)
+    ctx.fillText("Presiona 'Enter' para continuar...",300,200)
     interval = null
     board1.music.pause()
     board1.winSound.play()
@@ -331,5 +333,8 @@ addEventListener("keydown", function(e){
   if(e.keyCode === 32 && player1.y >canvas.height-70){
     this.gravity = 0
     player1.y -= 220
+  }
+  if(e.keyCode === 13){
+    P1level2()
   }
 })
